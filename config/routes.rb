@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   resources :places
-  resources :posts
+  resources :posts do
+    member do
+      put :add_collection
+      get :select_collection
+    end
+  end
   resources :collections
   resources :users
   resources :cities
