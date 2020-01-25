@@ -1,0 +1,2 @@
+module CollectionsPostsHelper
+end

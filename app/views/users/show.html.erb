@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+_______________
+
+<h3>Collections:</h3>
+<% @user.collections.each do |collection| %>
+  <%= render collection, collection: collection  %>
+<% end %>
+
+<br>
+_______________
+
+<br>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

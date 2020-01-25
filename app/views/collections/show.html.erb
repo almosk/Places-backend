@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @collection.title %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= City.find(@collection.city_id).title %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= User.find(@collection.user_id).name %>
+</p>
+
+
+_______________
+
+<h3>Posts:</h3>
+<% @collection.posts.each do |post| %>
+  <%= render post, post: post  %>
+<% end %>
+
+<br>
+_______________
+
+<br>
+
+
+<%= link_to 'Edit', edit_collection_path(@collection) %> |
+<%= link_to 'Back', collections_path %>
