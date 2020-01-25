@@ -20,7 +20,7 @@ _______________
 
 <h3>Posts:</h3>
 <% @collection.posts.each do |post| %>
-  <%= render post, post: post  %>
+  <%= render post, post: post, collection: @collection  %>
 <% end %>
 
 <br>

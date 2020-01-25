@@ -1,0 +1,25 @@
+<h3>Save to Collection</h3>
+
+<%= form_with(model: @post, local: true, url: add_collection_post_path, method:"put") do |form| %>
+  <%# if post.errors.any? %>
+    <!-- <div id="error_explanation">
+      <h2><%#= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+        <%# post.errors.full_messages.each do |message| %>
+          <li><%#= message %></li>
+        <%# end %>
+      </ul>
+    </div> -->
+  <%# end %>
+
+  <div class="field">
+    <%#= form.label :collections_posts %>
+    <%#= collection_check_boxes(:post, :collection_ids, Collection.all, :id, :title) %>
+    <%= select("post", "collection_ids", Collection.all.collect { |a| [a.title, a.id] }, { include_blank: true }) %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

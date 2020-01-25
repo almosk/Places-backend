@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :select_collection, :add_collection, :delete_from_collection]
 
   # GET /posts
   # GET /posts.json
@@ -61,14 +61,29 @@ class PostsController < ApplicationController
     end
   end
 
-  def select_collection
-    @post = Post.find(params[:id])
+  def save_to_collection
   end
 
   def add_collection
-    @post = Post.find(params[:id])
-    @collection = Collection.find(params[:id])
-    @post.collections << @collection
+    #puts params.inspect
+    #sputs params[:post][:collection_ids]
+    @collection = Collection.find(params[:post][:collection_ids])
+    respond_to do |format|
+      if @post.collections << @collection
+        format.html { redirect_to @collection, notice: 'Post was successfully deleted.' }
+        format.json { head :no_content }
+      end
+    end
+  end
+
+  def delete_from_collection
+    @collection = Collection.find(params[:collection])
+    respond_to do |format|
+      if @post.collections.delete(@collection)
+        format.html { redirect_to @collection, notice: 'Post was successfully deleted.' }
+        format.json { head :no_content }
+      end
+    end
   end
 
   private

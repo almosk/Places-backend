@@ -2,8 +2,9 @@ Rails.application.routes.draw do
   resources :places
   resources :posts do
     member do
+      get :save_to_collection
       put :add_collection
-      get :select_collection
+      put :delete_from_collection
     end
   end
   resources :collections
