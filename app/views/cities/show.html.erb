@@ -1,9 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @city.title %>
-</p>
+<h1><%= @city.title %></h1>
+_______________
+
+<h3>Collections:</h3>
+<% @city.collections.each do |collection| %>
+  <%= render collection, collection: collection  %>
+<% end %>
+
+<br>
+_______________
+
+<br>
 
 <%= link_to 'Edit', edit_city_path(@city) %> |
 <%= link_to 'Back', cities_path %>
