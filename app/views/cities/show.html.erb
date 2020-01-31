@@ -3,13 +3,44 @@
 <h1><%= @city.title %></h1>
 _______________
 
+<%
+##Array of uniq Posts
+city_posts = []
+@city.collections.each do |collection|
+  collection.posts.each do |post|
+    city_posts << post
+  end
+end
+city_posts = city_posts.uniq
+
+##Array of uniq Users
+city_users = []
+@city.collections.each do |collection|
+  user = User.find(collection.user_id)
+  city_users << user
+end
+city_users = city_users.uniq
+%>
+
+<h3>Posts:</h3>
+<% city_posts.each do |post| %>
+  <%= render post, post: post, collection: Collection.first  %>
+  <br>
+<% end %>
+_______________
+
 <h3>Collections:</h3>
 <% @city.collections.each do |collection| %>
   <%= render collection, collection: collection  %>
+  <br>
 <% end %>
-
-<br>
 _______________
+
+<h3>Users:</h3>
+<% city_users.each do |user| %>
+  <%= render user, user: user %>
+  <br>
+<% end %>
 
 <br>
 

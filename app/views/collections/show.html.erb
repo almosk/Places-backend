@@ -20,6 +20,9 @@ _______________
 <h3>Posts:</h3>
 <% @collection.posts.each do |post| %>
   <%= render post, post: post, collection: @collection  %>
+  <%= link_to "Save to Collection", save_to_collection_post_path(post), :method => :get %>
+  <%= link_to "Delete", delete_from_collection_post_path(post, :collection => @collection), :method => :put %>
+  <br>
 <% end %>
 
 <br>

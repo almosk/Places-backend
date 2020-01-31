@@ -3,17 +3,37 @@
 <h1>
   <%= @user.name %>
 </h1>
+
 _______________
 
-<h3>Collections:</h3>
+<h3>Cities:</h3>
 <% @user.collections.each do |collection| %>
-  <%= render collection, collection: collection  %>
+  <% city = City.find(collection.city_id) %>
+  <%= render city, city: city %>
 <% end %>
 
 <br>
 _______________
 
+<h3>Posts:</h3>
+<% @user.collections.each do |collection| %>
+  <% collection.posts.each do |post| %>
+    <%= render post, post: post, collection: collection  %>
+    <br>
+  <% end %>
+<% end %>
+
+_______________
+
+<h3>Collections:</h3>
+<% @user.collections.each do |collection| %>
+  <%= render collection, collection: collection  %>
+  <br>
+<% end %>
+
 <br>
+
+
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
