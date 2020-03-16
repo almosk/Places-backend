@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Title</th>
+      <th>Id</th>
       <th>Place</th>
       <th>User</th>
       <th>Collections</th>
@@ -17,6 +18,7 @@
     <% @posts.each do |post| %>
       <tr>
         <td><%= link_to post.title, post %></td>
+        <td><%= post.id %></td>
         <td><%= link_to Place.find(post.place_id).title, place_path(post.place_id) %></td>
         <td><%= link_to User.find(post.user_id).name, user_path(post.user_id) %></td>
         <td><%= Collection.find(post.collections.ids).collect(&:title) %></td>
