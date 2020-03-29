@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Collection:</strong>
+  <%= @collection_post.collection_id %>
+</p>
+
+<p>
+  <strong>Post:</strong>
+  <%= @collection_post.post_id %>
+</p>
+
+<%= link_to 'Edit', edit_collection_post_path(@collection_post) %> |
+<%= link_to 'Back', collection_posts_path %>

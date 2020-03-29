@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :collection_posts
   resources :places
   resources :posts do
     member do

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Collection Posts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Collection</th>
+      <th>Post</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @collection_posts.each do |collection_post| %>
+      <tr>
+        <td><%= collection_post.collection_id %></td>
+        <td><%= collection_post.post_id %></td>
+        <td><%= link_to 'Show', collection_post %></td>
+        <td><%= link_to 'Edit', edit_collection_post_path(collection_post) %></td>
+        <td><%= link_to 'Destroy', collection_post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Collection Post', new_collection_post_path %>

@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_25_093601) do
+ActiveRecord::Schema.define(version: 2020_03_29_122254) do
 
   create_table "cities", force: :cascade do |t|
     t.string "title"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "collection_posts", force: :cascade do |t|
+    t.integer "collection_id"
+    t.integer "post_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -24,11 +31,6 @@ ActiveRecord::Schema.define(version: 2020_01_25_093601) do
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "collections_posts", id: false, force: :cascade do |t|
-    t.integer "collection_id", null: false
-    t.integer "post_id", null: false
   end
 
   create_table "places", force: :cascade do |t|

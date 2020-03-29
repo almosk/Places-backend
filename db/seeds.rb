@@ -156,6 +156,6 @@ end
   1..5.times do
     p.collections << random_collection
   end
-  
+
   puts "Post #{p.title} created"
 end
