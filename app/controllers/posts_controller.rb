@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy, :select_collection, :add_collection, :delete_from_collection]
+  skip_before_action :verify_authenticity_token
 
   # GET /posts
   # GET /posts.json
