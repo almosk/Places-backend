@@ -29,7 +29,8 @@ class CollectionPostsController < ApplicationController
     respond_to do |format|
       if @collection_post.save
         format.html { redirect_to @collection_post, notice: 'Collection post was successfully created.' }
-        format.json { render :show, status: :created, location: @collection_post }
+        # format.json { render :show, status: :created, location: @collection_post }
+        format.json { render json: {collection_post: @collection_post},  status: :ok }
       else
         format.html { render :new }
         format.json { render json: @collection_post.errors, status: :unprocessable_entity }
