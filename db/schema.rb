@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2020_03_29_122254) do
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
+    t.string "description"
     t.integer "place_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -49,7 +50,7 @@ ActiveRecord::Schema.define(version: 2020_03_29_122254) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
+    t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

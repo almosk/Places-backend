@@ -25,7 +25,7 @@
   <div class="field">
     <%= form.label :user_id %>
     <%#= form.number_field :user_id %>
-    <%= select("post", "user_id", User.all.collect { |a| [a.name, a.id] }, { include_blank: true }) %>
+    <%= select("post", "user_id", User.all.collect { |a| [a.title, a.id] }, { include_blank: true }) %>
   </div>
 
   <div class="field">
