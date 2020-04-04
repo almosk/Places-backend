@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
+  devise_for :users
+  root to: "posts#index"
   resources :collection_posts
   resources :places
+  resources :collections
+  resources :users
+  resources :cities
   resources :posts do
     member do
       get :save_to_collection
@@ -8,9 +13,6 @@ Rails.application.routes.draw do
       put :delete_from_collection
     end
   end
-  resources :collections
-  resources :users
-  resources :cities
 
   namespace :v1 do
     resources :posts

@@ -15,15 +15,22 @@ Rake::Task['db:migrate'].invoke
 
 @users =
   [
-    {title: 'Alex'},
-    {title: 'Ivan'},
-    {title: 'Sergey'},
-    {title: 'Inna'},
-    {title: 'Anna'},
-    {title: 'Jane'},
-    {title: 'Zakhar'},
-    {title: 'Danila'},
-    {title: 'Pyotr'}
+    {
+      title: 'Alex',
+      email: 'alex@mail.com'
+    },
+    {
+      title: 'Ivan',
+      email: 'ivan@mail.com'
+    },
+    {
+      title: 'Sergey',
+      email: 'sergey@mail.com'
+    },
+    {
+      title: 'Inna',
+      email: 'inna@mail.com'
+    }
   ]
 
 @cities =
@@ -88,8 +95,12 @@ end
 
 # Create Users
 def create_user(user)
+  password = 'testtest'
   User.create(
-    title: user[:title]
+    title: user[:title],
+    email: user[:email],
+    password: password,
+    password_confirmation: password
   )
 end
 
