@@ -10,3 +10,6 @@ json.collections @collections do |collection|
   # json.user (User.find(collection['user_id'])
   json.url collection_url(Collection.find(collection['id']), format: :json)
 end
+# json.collections @collections do |collection|
+#   json.partial! "v1/collections/collection", collection: collection
+# end

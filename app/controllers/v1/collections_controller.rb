@@ -6,6 +6,6 @@ class V1::CollectionsController < ApplicationController
   def show
     @collection = Collection.find(params[:id])
     @user_title = User.all.find(@collection.user_id).title
-    @collections = @collection.posts
+    @posts = @collection.posts
   end
 end
