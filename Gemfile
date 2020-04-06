@@ -45,6 +45,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'rails-erd'
   gem 'devise'
+  gem 'devise_token_auth'
 end
 
 group :test do
