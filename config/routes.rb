@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  mount_devise_token_auth_for 'User', at: 'auth'
-  # devise_for :users
+  devise_for :users
   root to: "posts#index"
   resources :collection_posts
   resources :places
