@@ -15,7 +15,12 @@ Rails.application.routes.draw do
   end
 
   namespace :v1 do
+    get 'posts/profile_posts'
+    get 'posts/explore_posts'
     resources :posts
+
+    get 'collections/profile_collections'
+    get 'collections/explore_collections'
     resources :collections
   end
 end
