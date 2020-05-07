@@ -27,8 +27,11 @@ class Post < ApplicationRecord
       title: title,
       user_id: user_id,
       user_title: user.title,
+      user_collection: (collections.select{ |c| c.user_id == user.id }.any? ? collections.select{ |c| c.user_id == user.id }.first.title : ''),
+      description: description,
+      latitude: latitude,
+      longitude: longitude,
       url: url
     }
   end
-
 end

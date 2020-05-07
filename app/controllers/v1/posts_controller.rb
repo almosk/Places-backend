@@ -6,8 +6,14 @@ class V1::PostsController < ApplicationController
   end
 
   def profile_posts
-    # @posts = Post.all
-    @posts = @current_user.posts
+    # @posts = @current_user.posts
+    @posts = []
+    @current_user.collections.each do |collection|
+      collection.posts.each do |post|
+        @posts.push(post)
+      end
+    end
+    @collections = @current_user.collections
     render :json => @posts.collect { |p| p.post_snippet_json}
   end
 

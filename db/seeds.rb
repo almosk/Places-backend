@@ -92,6 +92,17 @@ def random_collection
   Collection.all.sample
 end
 
+def random_collections
+  Collection.all.sample(rand(1..5))
+end
+
+def random_latitude
+  rand(55.574855...55.884167)
+end
+
+def random_longitude
+  rand(37.372124...37.833899)
+end
 
 # Create Users
 def create_user(user)
@@ -158,15 +169,17 @@ def create_post(post)
     title:    post[:title],
     description: 'Post «' + post[:title] + '» description',
     place_id: random_place_id,
-    user_id:  random_user_id
+    user_id:  random_user_id,
+    latitude: random_latitude,
+    longitude: random_longitude
   )
 end
 
 @posts.each do |post|
   p = create_post(post)
 
-  1..5.times do
-    p.collections << random_collection
+  random_collections.each do |c|
+    p.collections << c
   end
 
   puts "Post #{p.title} created"

@@ -22,5 +22,7 @@ Rails.application.routes.draw do
     get 'collections/profile_collections'
     get 'collections/explore_collections'
     resources :collections
+
+    resources :users
   end
 end

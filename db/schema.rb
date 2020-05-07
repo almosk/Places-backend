@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(version: 2020_04_04_093001) do
     t.string "title"
     t.string "description"
     t.integer "place_id"
+    t.float "latitude"
+    t.float "longitude"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"

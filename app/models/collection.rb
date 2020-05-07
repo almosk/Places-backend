@@ -26,6 +26,7 @@ class Collection < ApplicationRecord
       title: title,
       user_id: user_id,
       user_title: user.title,
+      posts_quantity: posts.size,
       url: url
     }
   end
