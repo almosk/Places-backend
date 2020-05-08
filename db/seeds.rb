@@ -105,8 +105,14 @@ def random_longitude
 end
 
 def upload_fake_avatar
-  uploader = AvatarUploader.new(User.new, :ava)
+  uploader = AvatarUploader.new(User.new, :avatar)
   uploader.cache!(File.open(Dir.glob(File.join(Rails.root, 'lib/assets/avatars', '*')).sample))
+  uploader
+end
+
+def upload_fake_collection_cover
+  uploader = CollectionCoverUploader.new(Collection.new, :cover)
+  uploader.cache!(File.open(Dir.glob(File.join(Rails.root, 'lib/assets/collection_covers', '*')).sample))
   uploader
 end
 
@@ -160,7 +166,8 @@ def create_collection(collection)
   Collection.create(
     title:   collection[:title],
     city_id: random_city_id,
-    user_id: random_user_id
+    user_id: random_user_id,
+    cover: upload_fake_collection_cover
   )
 end
 

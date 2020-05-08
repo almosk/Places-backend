@@ -7,11 +7,13 @@ class Collection < ApplicationRecord
 
   include Rails.application.routes.url_helpers
 
+  mount_uploader :cover, CollectionCoverUploader
 
   def collection_show_json
     {
       id: id,
       title: title,
+      cover: 'http://localhost:3000' + cover.to_s,
       user_id: user_id,
       user_title: user.title,
 
@@ -24,6 +26,7 @@ class Collection < ApplicationRecord
     {
       id: id,
       title: title,
+      cover: 'http://localhost:3000' + cover.to_s,
       user: user.user_snippet_json,
       user_id: user_id,
       user_title: user.title,
