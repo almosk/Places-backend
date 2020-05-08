@@ -13,6 +13,7 @@ class Post < ApplicationRecord
       title: title,
       description: description,
       place_id: place_id,
+      user: user.user_snippet_json,
       user_id: user_id,
       user_title: user.title,
 
@@ -25,6 +26,7 @@ class Post < ApplicationRecord
     {
       id: id,
       title: title,
+      user: user.user_snippet_json,
       user_id: user_id,
       user_title: user.title,
       user_collection: (collections.select{ |c| c.user_id == user.id }.any? ? collections.select{ |c| c.user_id == user.id }.first.title : ''),

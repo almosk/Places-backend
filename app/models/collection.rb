@@ -24,6 +24,7 @@ class Collection < ApplicationRecord
     {
       id: id,
       title: title,
+      user: user.user_snippet_json,
       user_id: user_id,
       user_title: user.title,
       posts_quantity: posts.size,

@@ -7,6 +7,8 @@ class User < ApplicationRecord
   has_many :cities, through: :collections
   has_many :posts
 
+  mount_uploader :avatar, AvatarUploader
+
   include Rails.application.routes.url_helpers
 
   # def post_show_json
@@ -29,6 +31,7 @@ class User < ApplicationRecord
       title: title,
       collections_quantity: collections.size,
       posts_quantity: posts.size,
+      avatar: 'http://localhost:3000' + avatar.to_s,
       url: url,
     }
   end

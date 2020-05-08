@@ -104,6 +104,12 @@ def random_longitude
   rand(37.372124...37.833899)
 end
 
+def upload_fake_avatar
+  uploader = AvatarUploader.new(User.new, :ava)
+  uploader.cache!(File.open(Dir.glob(File.join(Rails.root, 'lib/assets/avatars', '*')).sample))
+  uploader
+end
+
 # Create Users
 def create_user(user)
   password = 'testtest'
@@ -111,7 +117,8 @@ def create_user(user)
     title: user[:title],
     email: user[:email],
     password: password,
-    password_confirmation: password
+    password_confirmation: password,
+    avatar: upload_fake_avatar
   )
 end
 

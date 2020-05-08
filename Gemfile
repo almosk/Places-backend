@@ -46,6 +46,7 @@ group :development do
   gem 'rails-erd'
   gem 'devise'
   gem 'devise_token_auth'
+  gem 'carrierwave', '~> 2.0'
 end
 
 group :test do
