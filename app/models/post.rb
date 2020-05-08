@@ -6,12 +6,15 @@ class Post < ApplicationRecord
   belongs_to :place
 
   include Rails.application.routes.url_helpers
+  mount_uploader :cover, PostCoverUploader
+
 
   def post_show_json
     {
       id: id,
       title: title,
       description: description,
+      cover: 'http://localhost:3000' + cover.to_s,
       place_id: place_id,
       user: user.user_snippet_json,
       user_id: user_id,
@@ -26,6 +29,7 @@ class Post < ApplicationRecord
     {
       id: id,
       title: title,
+      cover: 'http://localhost:3000' + cover.to_s,
       user: user.user_snippet_json,
       user_id: user_id,
       user_title: user.title,

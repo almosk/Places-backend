@@ -116,6 +116,12 @@ def upload_fake_collection_cover
   uploader
 end
 
+def upload_fake_post_cover
+  uploader = PostCoverUploader.new(Collection.new, :cover)
+  uploader.cache!(File.open(Dir.glob(File.join(Rails.root, 'lib/assets/post_covers', '*')).sample))
+  uploader
+end
+
 # Create Users
 def create_user(user)
   password = 'testtest'
@@ -185,7 +191,8 @@ def create_post(post)
     place_id: random_place_id,
     user_id:  random_user_id,
     latitude: random_latitude,
-    longitude: random_longitude
+    longitude: random_longitude,
+    cover: upload_fake_post_cover
   )
 end
 
