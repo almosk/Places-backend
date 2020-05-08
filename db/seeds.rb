@@ -16,62 +16,74 @@ Rake::Task['db:migrate'].invoke
 @users =
   [
     {
-      title: 'Alex',
+      title: 'Александр Ефремов',
       email: 'alex@mail.com'
     },
     {
-      title: 'Ivan',
+      title: 'Иван Каршаков',
       email: 'ivan@mail.com'
     },
     {
-      title: 'Sergey',
+      title: 'Сергей Дудин',
       email: 'sergey@mail.com'
     },
     {
-      title: 'Inna',
+      title: 'Инна Розанова',
       email: 'inna@mail.com'
+    },
+    {
+      title: 'Денис Щукин',
+      email: 'denis@mail.com'
+    },
+    {
+      title: 'Коля Туркин',
+      email: 'лщднф@mail.com'
+    },
+    {
+      title: 'Лена Сергеева',
+      email: 'lena@mail.com'
     }
   ]
 
 @cities =
   [
-    {title: 'Moscow'},
-    {title: 'Samara'},
-    {title: 'Berlin'},
-    {title: 'Barcelona'}
+    {title: 'Москва'},
+    {title: 'Самара'},
+    {title: 'Берлин'},
+    {title: 'Барселона'}
   ]
 
 @collections =
   [
-    {title: 'Coffe to go'},
-    {title: 'Restoraunts'},
-    {title: 'Cinemas'},
-    {title: 'Souvenirs'},
-    {title: 'Festivals'},
-    {title: 'Museums'},
-    {title: 'Shops'}
+    {title: 'Кофейни'},
+    {title: 'Рестораны'},
+    {title: 'Кино'},
+    {title: 'Сувениры'},
+    {title: 'Летние фестивали'},
+    {title: 'Музеи'},
+    {title: 'Магазины одежды'}
   ]
 
 @places =
   [
-    {title: 'Mustafa'},
+    {title: 'На вина!'},
     {title: 'Yard'},
     {title: 'Maestrello'},
-    {title: 'U Svetlani'},
-    {title: 'Fargo'},
-    {title: 'Cotti'},
-    {title: 'Spektor'}
+    {title: 'Кафе «Салют»'},
+    {title: 'Кофемания'},
+    {title: 'Парк Горького'},
+    {title: 'ВДНХ'}
   ]
 
 @posts =
   [
-    {title: 'Horoshiy restoran'},
-    {title: 'Otdohnut'},
-    {title: 'Letnaya veranda'},
-    {title: 'Poest'},
-    {title: 'Perekusit'},
-    {title: 'S noutbukom'},
-    {title: 'Posidet vdvoem'}
+    {title: 'На вина!'},
+    {title: 'Yard'},
+    {title: 'Maestrello'},
+    {title: 'Кафе «Салют»'},
+    {title: 'Кофемания'},
+    {title: 'ABC Roasters'},
+    {title: 'Сад «Эрмитаж»'}
   ]
 
 
