@@ -10,8 +10,19 @@ class V1::UsersController < ApplicationController
     render :json => @users.collect { |u| u.user_snippet_json}
   end
 
-  # def show
-  #   @post = Post.find(params[:id])
-  #   render :json => @post.post_show_json
-  # end
+  def show
+    @user = User.find(params[:id])
+    @collections = @user.collections
+    @posts = []
+    @collections.each do |collection|
+      collection.posts.each do |post|
+        @posts.push(post)
+      end
+    end
+    render json: {
+      id: @user.id,
+      collections: @collections.collect { |c| c.collection_snippet_json},
+      posts: @posts.collect { |p| p.post_snippet_json}
+    }
+  end
 end

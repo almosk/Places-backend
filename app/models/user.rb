@@ -26,11 +26,17 @@ class User < ApplicationRecord
 
   def user_snippet_json
     url = 'http://localhost:3000' + v1_user_path(self, format: :json)
+    @posts = []
+    collections.each do |collection|
+      collection.posts.each do |post|
+        @posts.push(post)
+      end
+    end
     {
       id: id,
       title: title,
       collections_quantity: collections.size,
-      posts_quantity: posts.size,
+      posts_quantity: @posts.size,
       avatar: 'http://localhost:3000' + avatar.to_s,
       url: url,
     }
