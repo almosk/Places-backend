@@ -26,4 +26,10 @@ class V1::PostsController < ApplicationController
     @post = Post.find(params[:id])
     render :json => @post.post_show_json
   end
+
+  def save_collections
+    @post = Post.find(params[:id])
+    @collections = @current_user.collections.select { |c| !@post.collections.include?(c)}
+    render :json => @collections.collect { |c| c.collection_snippet_json}
+  end
 end
