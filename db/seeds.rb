@@ -16,42 +16,42 @@ Rake::Task['db:migrate'].invoke
 @users =
   [
     {title: 'Катя Обухова',         image: 'lib/assets/users/Катя Обухова.jpg',          email: 'obuhova@mail.com'   },
-    {title: 'Лёня Пирожков',        image: 'lib/assets/users/Лёня Пирожков.jpg',         email: 'pirozhkov@mail.com' },
-    {title: 'Максим Перчик',        image: 'lib/assets/users/Максим Перчик.jpg',         email: 'perchik@mail.com'   },
+    # {title: 'Лёня Пирожков',        image: 'lib/assets/users/Лёня Пирожков.jpg',         email: 'pirozhkov@mail.com' },
+    # {title: 'Максим Перчик',        image: 'lib/assets/users/Максим Перчик.jpg',         email: 'perchik@mail.com'   },
     {title: 'Женя Симонова',        image: 'lib/assets/users/Женя Симонова.jpg',         email: 'simonova@mail.com'  },
-    {title: 'Саша Семенова',        image: 'lib/assets/users/Саша Семенова.jpg',         email: 'semenova@mail.com'  },
-    {title: 'Петя Петропавловский', image: 'lib/assets/users/Петя Петропавловский.jpg',  email: 'petropav@mail.com'  },
+    # {title: 'Саша Семенова',        image: 'lib/assets/users/Саша Семенова.jpg',         email: 'semenova@mail.com'  },
+    # {title: 'Петя Петропавловский', image: 'lib/assets/users/Петя Петропавловский.jpg',  email: 'petropav@mail.com'  },
     {title: 'Кирилл Осипов',        image: 'lib/assets/users/Кирилл Осипов.jpg',         email: 'osipov@mail.com'    },
-    {title: 'Маша Пински',          image: 'lib/assets/users/Маша Пински.jpg',           email: 'pinski@mail.com'    },
-    {title: 'Карина Залесская',     image: 'lib/assets/users/Карина Залесская.jpg',      email: 'zalesskaya@mail.com'},
-    {title: 'Юля Каспарянц',        image: 'lib/assets/users/Юля Каспарянц.jpg',         email: 'caspar@mail.com'    },
-    {title: 'Аня Чулкова',          image: 'lib/assets/users/Аня Чулкова.jpg',           email: 'chulkova@mail.com'  },
-    {title: 'Даша Киселева',        image: 'lib/assets/users/Даша Киселева.jpg',         email: 'kiseleva@mail.com'  },
+    # {title: 'Маша Пински',          image: 'lib/assets/users/Маша Пински.jpg',           email: 'pinski@mail.com'    },
+    # {title: 'Карина Залесская',     image: 'lib/assets/users/Карина Залесская.jpg',      email: 'zalesskaya@mail.com'},
+    # {title: 'Юля Каспарянц',        image: 'lib/assets/users/Юля Каспарянц.jpg',         email: 'caspar@mail.com'    },
+    # {title: 'Аня Чулкова',          image: 'lib/assets/users/Аня Чулкова.jpg',           email: 'chulkova@mail.com'  },
+    # {title: 'Даша Киселева',        image: 'lib/assets/users/Даша Киселева.jpg',         email: 'kiseleva@mail.com'  },
     {title: 'Глеб Куценок',         image: 'lib/assets/users/Глеб Куценок.jpg',          email: 'cutsenok@mail.com'  },
-    {title: 'Галя Ермолаева',       image: 'lib/assets/users/Галя Ермолаева.jpg',        email: 'ermolaeva@mail.com' },
-    {title: 'Арина Морозова',       image: 'lib/assets/users/Арина Морозова.jpg',        email: 'morozova@mail.com'  },
+    # {title: 'Галя Ермолаева',       image: 'lib/assets/users/Галя Ермолаева.jpg',        email: 'ermolaeva@mail.com' },
+    # {title: 'Арина Морозова',       image: 'lib/assets/users/Арина Морозова.jpg',        email: 'morozova@mail.com'  },
   ]
 
 @cities =
   [
-    {title: 'Москва'},
-    {title: 'Самара'},
-    {title: 'Берлин'},
-    {title: 'Барселона'},
+    {title: 'Москва', identificator: [1]},
+    {title: 'Самара', identificator: [2]},
+    {title: 'Берлин', identificator: [3]},
+    {title: 'Барселона', identificator: [4]},
   ]
 
 @collections =
   [
-    {title: '10 лучших кофеен Москвы', image: 'lib/assets/collections/10кофеенмосквы.png',   identificator: 1 },
-    {title: 'Гастропабы',              image: 'lib/assets/collections/гастронобар.jpg',      identificator: 2 },
-    {title: 'Дома музеи',              image: 'lib/assets/collections/домамузеи.jpg',        identificator: 3 },
-    {title: 'Китай город',             image: 'lib/assets/collections/китайгород.jpeg',      identificator: 4 },
-    {title: 'Веганские места',         image: 'lib/assets/collections/веганместа.jpg',       identificator: 5 },
-    {title: 'Любимые патрики',         image: 'lib/assets/collections/патрики.jpeg',         identificator: 6 },
-    {title: 'Конструктивизм в Москве', image: 'lib/assets/collections/конструктивизм.jpg',   identificator: 7 },
-    {title: 'Мой любимый маршрут',     image: 'lib/assets/collections/любимыймаршрут.jpg',   identificator: 8 },
-    {title: 'Крафотовое пиво',         image: 'lib/assets/collections/пиво.jpeg',            identificator: 9 },
-    {title: 'Еврейская москва',        image: 'lib/assets/collections/еврейскаямосква.jpg',  identificator: 10},
+    {title: '10 лучших кофеен Москвы', city: 1, image: 'lib/assets/collections/10кофеенмосквы.png',   identificator: 1 },
+    {title: 'Гастропабы',              city: 1, image: 'lib/assets/collections/гастронобар.jpg',      identificator: 2 },
+    {title: 'Дома музеи',              city: 1, image: 'lib/assets/collections/домамузеи.jpg',        identificator: 3 },
+    {title: 'Китай город',             city: 1, image: 'lib/assets/collections/китайгород.jpeg',      identificator: 4 },
+    {title: 'Веганские места',         city: 1, image: 'lib/assets/collections/веганместа.jpg',       identificator: 5 },
+    {title: 'Любимые патрики',         city: 1, image: 'lib/assets/collections/патрики.jpeg',         identificator: 6 },
+    {title: 'Конструктивизм в Москве', city: 1, image: 'lib/assets/collections/конструктивизм.jpg',   identificator: 7 },
+    {title: 'Мой любимый маршрут',     city: 1, image: 'lib/assets/collections/любимыймаршрут.jpg',   identificator: 8 },
+    {title: 'Крафотовое пиво',         city: 1, image: 'lib/assets/collections/пиво.jpeg',            identificator: 9 },
+    {title: 'Еврейская москва',        city: 1, image: 'lib/assets/collections/еврейскаямосква.jpg',  identificator: 10},
   ]
 
 @places =
@@ -67,65 +67,65 @@ Rake::Task['db:migrate'].invoke
 
 @posts =
   [
-    {title: 'Кооператив черный',                                                 identificator: [1,4,5],image:'lib/assets/places/кооперативчерный.jpg'},
-    {title: 'Розетка и кофе',                                                    identificator: [1,4],  image:'lib/assets/places/розеткаикофе.png'},
-    {title: 'Bloom n brew',                                                      identificator: [1],    image:'lib/assets/places/bloomnbrew.jpg'},
-    {title: 'Abc',                                                               identificator: [1,4],  image:'lib/assets/places/abc.jpg'},
-    {title: 'David b coffee',                                                    identificator: [1,6],  image:'lib/assets/places/davidbcafe.jpg'},
-    {title: 'Эрна',                                                              identificator: [1],    image:'lib/assets/places/шуховскаябашня.jpeg'},
-    {title: 'Аэроплан',                                                          identificator: [1],    image:'lib/assets/places/аэроплан.jpeg'},
-    {title: 'bro.we',                                                            identificator: [1],    image:'lib/assets/places/browe.jpg'},
-    {title: 'Прогресс',                                                          identificator: [1],    image:'lib/assets/places/прогресс.jpeg'},
-    {title: 'Салют',                                                             identificator: [1],    image:'lib/assets/places/салют.jpg'},
-    {title: 'Дом культур',                                                       identificator: [2],    image:'lib/assets/places/домкультур.jpeg'},
-    {title: 'Техникум',                                                          identificator: [2],    image:'lib/assets/places/техникум.jpg'},
-    {title: 'Nude',                                                              identificator: [6,2],  image:'lib/assets/places/nude.jpg'},
-    {title: 'Горыныч',                                                           identificator: [2],    image:'lib/assets/places/горыныч.jpg'},
-    {title: 'Remy kitchen',                                                      identificator: [2],    image:'lib/assets/places/remy.jpg'},
-    {title: 'blanc_',                                                            identificator: [4,2],  image:'lib/assets/places/blanc.jpg'},
-    {title: 'Flora no fauna',                                                    identificator: [5,2],  image:'lib/assets/places/floranofauna.jpg'},
-    {title: 'Северяне',                                                          identificator: [2],    image:'lib/assets/places/северяне.jpg'},
-    {title: 'Дом музей Шаляпина',                                                identificator: [3],    image:'lib/assets/places/музейшаляпина.jpg'},
-    {title: 'Дом музей Станиславского',                                          identificator: [3],    image:'lib/assets/places/музейстаниславского.jpg'},
-    {title: 'Дом музей Чехова',                                                  identificator: [3],    image:'lib/assets/places/музейчехова.jpg'},
-    {title: 'Дом музей Васнецова',                                               identificator: [3],    image:'lib/assets/places/пер. васнецова13_1.jpg'},
-    {title: 'Дом музей Марины Цветаевой',                                        identificator: [3],    image:'lib/assets/places/музейцветаева.jpeg'},
-    {title: 'Музей квартира Горького',                                           identificator: [3],    image:'lib/assets/places/музейгорького.jpg'},
-    {title: 'Московская хоральная синагога',                                     identificator: [4],    image:'lib/assets/places/хоральнаясинагога.jpg'},
-    {title: 'граунд солянка',                                                    identificator: [4],    image:'lib/assets/places/граунд.jpeg'},
-    {title: 'Хитровская площадь',                                                identificator: [4],    image:'lib/assets/places/хитровская.jpg'},
-    {title: 'Котомка',                                                           identificator: [4,5],  image:'lib/assets/places/котомка.jpg'},
-    {title: 'Евангелическо-лютеранский кафедральный собор Святых Петра и Павла', identificator: [4],    image:'lib/assets/places/кафедральныйсобор_петраипавла.jpg'},
-    {title: 'Яма',                                                               identificator: [4],    image:'lib/assets/places/яма.jpg'},
-    {title: 'Maestrello',                                                        identificator: [4],    image:'lib/assets/places/maestrello.jpg'},
-    {title: 'Ивановская горка',                                                  identificator: [4],    image:'lib/assets/places/ивановскаягорка.jpg'},
-    {title: 'Matcha way',                                                        identificator: [5],    image:'lib/assets/places/matchaway.jpg'},
-    {title: 'Fruits and veges',                                                  identificator: [5],    image:'lib/assets/places/fruitsandvegges.jpeg'},
-    {title: 'Fresh',                                                             identificator: [5],    image:'lib/assets/places/fresh.jpg'},
-    {title: 'Мох',                                                               identificator: [5],    image:'lib/assets/places/мох.jpg'},
-    {title: 'Театр «Практика»',                                                  identificator: [6],    image:'lib/assets/places/театрпрактика.jpg'},
-    {title: 'Музей Михаила Булгакова',                                           identificator: [6,3],  image:'lib/assets/places/музейбулгакова.jpg'},
-    {title: 'Дом Шехтеля',                                                       identificator: [6,3],  image:'lib/assets/places/ДомШехтеля.jpeg'},
-    {title: 'Апаковский трамвайный парк',                                        identificator: [7],    image:'lib/assets/places/апаковский парк.jpg'},
-    {title: 'Шуховская башня',                                                   identificator: [7],    image:'lib/assets/places/шуховскаябашня.jpeg'},
-    {title: 'Дом-коммуна РЖСКТ «Первое Замоскворецкое объединение»',             identificator: [7],    image:'lib/assets/places/домкоммунаржскт.jpg'},
-    {title: 'Хавско-Шаболовский жилмассив',                                      identificator: [7],    image:'lib/assets/places/хавскощаболовскийжилмассив.jpg'},
-    {title: 'Дом-коммуна Николаева',                                             identificator: [7],    image:'lib/assets/places/дом коммуна николаева.jpg'},
-    {title: 'les',                                                               identificator: [8],    image:'lib/assets/places/лес.jpg'},
-    {title: 'Третьяковка',                                                       identificator: [8],    image:'lib/assets/places/новаятретьяковка.jpg'},
-    {title: 'Музеон',                                                            identificator: [8],    image:'lib/assets/places/музеон.jpg'},
-    {title: 'Красный октябрь',                                                   identificator: [8],    image:'lib/assets/places/красныйоктябрь.jpg'},
-    {title: 'Пушкинский',                                                        identificator: [8],    image:'lib/assets/places/пушкинский.jpg'},
-    {title: 'Дом Кекушева на Остоженке',                                         identificator: [8],    image:'lib/assets/places/домкекушева.jpg'},
-    {title: 'Сосна и липа',                                                      identificator: [9],    image:'lib/assets/places/сосна и липа.jpeg'},
-    {title: 'Энтузиаст',                                                         identificator: [9],    image:'lib/assets/places/шуховскаябашня.jpeg'},
-    {title: 'Бирмаркет',                                                         identificator: [9],    image:'lib/assets/places/бирмаркет.jpeg'},
-    {title: 'Главпивмаг',                                                        identificator: [9],    image:'lib/assets/places/главпивмаг.jpg'},
-    {title: 'Абу гош',                                                           identificator: [10],   image:'lib/assets/places/абу гош.jpg'},
-    {title: 'Дизенгофф',                                                         identificator: [10],   image:'lib/assets/places/дизенгоф.jpg'},
-    {title: 'Mitzva bar',                                                        identificator: [10],   image:'lib/assets/places/мицва.jpg'},
-    {title: 'Еврейский музей ',                                                  identificator: [10],   image:'lib/assets/places/еврейскиймузей.jpg'},
-    {title: 'Синагога на большой бронной',                                       identificator: [10],   image:'lib/assets/places/синагоганабольшойбронной.jpg'},
+    {title: 'Кооператив черный',                                                 collections: [1,4,5],image:'lib/assets/places/кооперативчерный.jpg'},
+    {title: 'Розетка и кофе',                                                    collections: [1,4],  image:'lib/assets/places/розеткаикофе.png'},
+    {title: 'Bloom n brew',                                                      collections: [1],    image:'lib/assets/places/bloomnbrew.jpg'},
+    {title: 'Abc',                                                               collections: [1,4],  image:'lib/assets/places/abc.jpg'},
+    {title: 'David b coffee',                                                    collections: [1,6],  image:'lib/assets/places/davidbcafe.jpg'},
+    {title: 'Эрна',                                                              collections: [1],    image:'lib/assets/places/шуховскаябашня.jpeg'},
+    {title: 'Аэроплан',                                                          collections: [1],    image:'lib/assets/places/аэроплан.jpeg'},
+    {title: 'bro.we',                                                            collections: [1],    image:'lib/assets/places/browe.jpg'},
+    {title: 'Прогресс',                                                          collections: [1],    image:'lib/assets/places/прогресс.jpeg'},
+    {title: 'Салют',                                                             collections: [1],    image:'lib/assets/places/салют.jpg'},
+    {title: 'Дом культур',                                                       collections: [2],    image:'lib/assets/places/домкультур.jpeg'},
+    {title: 'Техникум',                                                          collections: [2],    image:'lib/assets/places/техникум.jpg'},
+    {title: 'Nude',                                                              collections: [6,2],  image:'lib/assets/places/nude.jpg'},
+    {title: 'Горыныч',                                                           collections: [2],    image:'lib/assets/places/горыныч.jpg'},
+    {title: 'Remy kitchen',                                                      collections: [2],    image:'lib/assets/places/remy.jpg'},
+    {title: 'blanc_',                                                            collections: [4,2],  image:'lib/assets/places/blanc.jpg'},
+    {title: 'Flora no fauna',                                                    collections: [5,2],  image:'lib/assets/places/floranofauna.jpg'},
+    {title: 'Северяне',                                                          collections: [2],    image:'lib/assets/places/северяне.jpg'},
+    {title: 'Дом музей Шаляпина',                                                collections: [3],    image:'lib/assets/places/музейшаляпина.jpg'},
+    {title: 'Дом музей Станиславского',                                          collections: [3],    image:'lib/assets/places/музейстаниславского.jpg'},
+    {title: 'Дом музей Чехова',                                                  collections: [3],    image:'lib/assets/places/музейчехова.jpg'},
+    {title: 'Дом музей Васнецова',                                               collections: [3],    image:'lib/assets/places/пер. васнецова13_1.jpg'},
+    {title: 'Дом музей Марины Цветаевой',                                        collections: [3],    image:'lib/assets/places/музейцветаева.jpeg'},
+    {title: 'Музей квартира Горького',                                           collections: [3],    image:'lib/assets/places/музейгорького.jpg'},
+    {title: 'Московская хоральная синагога',                                     collections: [4],    image:'lib/assets/places/хоральнаясинагога.jpg'},
+    {title: 'граунд солянка',                                                    collections: [4],    image:'lib/assets/places/граунд.jpeg'},
+    {title: 'Хитровская площадь',                                                collections: [4],    image:'lib/assets/places/хитровская.jpg'},
+    {title: 'Котомка',                                                           collections: [4,5],  image:'lib/assets/places/котомка.jpg'},
+    {title: 'Евангелическо-лютеранский кафедральный собор Святых Петра и Павла', collections: [4],    image:'lib/assets/places/кафедральныйсобор_петраипавла.jpg'},
+    {title: 'Яма',                                                               collections: [4],    image:'lib/assets/places/яма.jpg'},
+    {title: 'Maestrello',                                                        collections: [4],    image:'lib/assets/places/maestrello.jpg'},
+    {title: 'Ивановская горка',                                                  collections: [4],    image:'lib/assets/places/ивановскаягорка.jpg'},
+    {title: 'Matcha way',                                                        collections: [5],    image:'lib/assets/places/matchaway.jpg'},
+    {title: 'Fruits and veges',                                                  collections: [5],    image:'lib/assets/places/fruitsandvegges.jpeg'},
+    {title: 'Fresh',                                                             collections: [5],    image:'lib/assets/places/fresh.jpg'},
+    {title: 'Мох',                                                               collections: [5],    image:'lib/assets/places/мох.jpg'},
+    {title: 'Театр «Практика»',                                                  collections: [6],    image:'lib/assets/places/театрпрактика.jpg'},
+    {title: 'Музей Михаила Булгакова',                                           collections: [6,3],  image:'lib/assets/places/музейбулгакова.jpg'},
+    {title: 'Дом Шехтеля',                                                       collections: [6,3],  image:'lib/assets/places/ДомШехтеля.jpeg'},
+    {title: 'Апаковский трамвайный парк',                                        collections: [7],    image:'lib/assets/places/апаковский парк.jpg'},
+    {title: 'Шуховская башня',                                                   collections: [7],    image:'lib/assets/places/шуховскаябашня.jpeg'},
+    {title: 'Дом-коммуна РЖСКТ «Первое Замоскворецкое объединение»',             collections: [7],    image:'lib/assets/places/домкоммунаржскт.jpg'},
+    {title: 'Хавско-Шаболовский жилмассив',                                      collections: [7],    image:'lib/assets/places/хавскощаболовскийжилмассив.jpg'},
+    {title: 'Дом-коммуна Николаева',                                             collections: [7],    image:'lib/assets/places/дом коммуна николаева.jpg'},
+    {title: 'les',                                                               collections: [8],    image:'lib/assets/places/лес.jpg'},
+    {title: 'Третьяковка',                                                       collections: [8],    image:'lib/assets/places/новаятретьяковка.jpg'},
+    {title: 'Музеон',                                                            collections: [8],    image:'lib/assets/places/музеон.jpg'},
+    {title: 'Красный октябрь',                                                   collections: [8],    image:'lib/assets/places/красныйоктябрь.jpg'},
+    {title: 'Пушкинский',                                                        collections: [8],    image:'lib/assets/places/пушкинский.jpg'},
+    {title: 'Дом Кекушева на Остоженке',                                         collections: [8],    image:'lib/assets/places/домкекушева.jpg'},
+    {title: 'Сосна и липа',                                                      collections: [9],    image:'lib/assets/places/сосна и липа.jpeg'},
+    {title: 'Энтузиаст',                                                         collections: [9],    image:'lib/assets/places/шуховскаябашня.jpeg'},
+    {title: 'Бирмаркет',                                                         collections: [9],    image:'lib/assets/places/бирмаркет.jpeg'},
+    {title: 'Главпивмаг',                                                        collections: [9],    image:'lib/assets/places/главпивмаг.jpg'},
+    {title: 'Абу гош',                                                           collections: [10],   image:'lib/assets/places/абу гош.jpg'},
+    {title: 'Дизенгофф',                                                         collections: [10],   image:'lib/assets/places/дизенгоф.jpg'},
+    {title: 'Mitzva bar',                                                        collections: [10],   image:'lib/assets/places/мицва.jpg'},
+    {title: 'Еврейский музей ',                                                  collections: [10],   image:'lib/assets/places/еврейскиймузей.jpg'},
+    {title: 'Синагога на большой бронной',                                       collections: [10],   image:'lib/assets/places/синагоганабольшойбронной.jpg'},
 ]
 
 #Randoms
@@ -157,23 +157,23 @@ def random_longitude
   rand(37.372124...37.833899)
 end
 
-def upload_avatar
-  uploader = AvatarUploader.new(User.new, :avatar)
-  uploader.cache!(File.open(Dir.glob(File.join(Rails.root, 'lib/assets/users', '*')).sample))
-  uploader
-end
-
-def upload_collection_cover
-  uploader = CollectionCoverUploader.new(Collection.new, :cover)
-  uploader.cache!(File.open(Dir.glob(File.join(Rails.root, 'lib/assets/collection_covers', '*')).sample))
-  uploader
-end
-
-def upload_post_cover
-  uploader = PostCoverUploader.new(Collection.new, :cover)
-  uploader.cache!(File.open(Dir.glob(File.join(Rails.root, 'lib/assets/post_covers', '*')).sample))
-  uploader
-end
+# def upload_avatar(image)
+#   uploader = AvatarUploader.new(User.new, :avatar)
+#   uploader.cache!(File.open(Dir.glob(File.join(Rails.root, 'lib/assets/users', '*')).sample))
+#   uploader
+# end
+#
+# def upload_collection_cover
+#   uploader = CollectionCoverUploader.new(Collection.new, :cover)
+#   uploader.cache!(File.open(Dir.glob(File.join(Rails.root, 'lib/assets/collection_covers', '*')).sample))
+#   uploader
+# end
+#
+# def upload_post_cover
+#   uploader = PostCoverUploader.new(Collection.new, :cover)
+#   uploader.cache!(File.open(Dir.glob(File.join(Rails.root, 'lib/assets/post_covers', '*')).sample))
+#   uploader
+# end
 
 # Create Users
 def create_user(user)
@@ -183,7 +183,7 @@ def create_user(user)
     email: user[:email],
     password: password,
     password_confirmation: password,
-    avatar: upload_fake_avatar
+    avatar: File.open(user[:image])
   )
 end
 
@@ -191,6 +191,8 @@ end
   u = create_user(user)
   puts "User #{u.title} created"
 end
+
+
 
 
 # Create Cities
@@ -204,6 +206,8 @@ end
   c = create_city(city)
   puts "City #{c.title} created"
 end
+
+
 
 
 # Create Places
@@ -220,13 +224,15 @@ end
 end
 
 
+
+
 # Create Collections
 def create_collection(collection)
   Collection.create(
     title:   collection[:title],
-    city_id: random_city_id,
+    city_id: collection[:city],
     user_id: random_user_id,
-    cover: upload_fake_collection_cover
+    cover: File.open(collection[:image])
   )
 end
 
@@ -236,25 +242,33 @@ end
 end
 
 
+
+
 # Create Posts
 def create_post(post)
   Post.create(
     title:    post[:title],
-    description: 'Post «' + post[:title] + '» description',
+    description: 'Описание поста «' + post[:title] + '»',
     place_id: random_place_id,
     user_id:  random_user_id,
     latitude: random_latitude,
     longitude: random_longitude,
-    cover: upload_fake_post_cover
+    cover: File.open(post[:image])
   )
 end
 
 @posts.each do |post|
   p = create_post(post)
 
-  random_collections.each do |c|
-    p.collections << c
+  post[:collections].each do |c|
+    p.collections << Collection.find(c)
   end
 
-  puts "Post #{p.title} created"
+  @collection = p.collections.sample
+
+  p.user_id = @collection.user_id
+
+  puts "Post #{p.title}"
+  puts "     in #{p.collections.collect{|c| c.title}.join(', ')}"
+  puts "     in #{@collection.title} by #{p.user.title}"
 end
