@@ -7,19 +7,25 @@ class V1::PostsController < ApplicationController
 
   def profile_posts
     # @posts = @current_user.posts
-    @posts = []
+    @profile_posts = []
     @current_user.collections.each do |collection|
       collection.posts.each do |post|
-        @posts.push(post)
+        @profile_posts.push(post)
       end
     end
     @collections = @current_user.collections
-    render :json => @posts.collect { |p| p.post_snippet_json}
+    render :json => @profile_posts.collect { |p| p.post_snippet_json}
   end
 
   def explore_posts
-    @posts = Post.all.select { |p| p.user_id != @current_user.id }
-    render :json => @posts.collect { |p| p.post_snippet_json}
+    @profile_posts = []
+    @current_user.collections.each do |collection|
+      collection.posts.each do |post|
+        @profile_posts.push(post)
+      end
+    end
+    @explore_posts = Post.all.select { |p| !@profile_posts.include?(p) }
+    render :json => @explore_posts.collect { |p| p.post_snippet_json}
   end
 
   def show

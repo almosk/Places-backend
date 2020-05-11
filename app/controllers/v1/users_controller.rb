@@ -21,6 +21,10 @@ class V1::UsersController < ApplicationController
     end
     render json: {
       id: @user.id,
+      title: @user.title,
+      description: @user.description,
+      username: @user.username,
+      avatar: 'http://localhost:3000' + @user.avatar.to_s,
       collections: @collections.collect { |c| c.collection_snippet_json},
       posts: @posts.collect { |p| p.post_snippet_json}
     }

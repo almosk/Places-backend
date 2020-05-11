@@ -6,6 +6,8 @@
   <%= @post.title %>
 </h1>
 
+<p><%= @post.user.title %></p>
+
 <p>
   <strong>Place:</strong>
   <%= Place.find(@post.place_id).title %>

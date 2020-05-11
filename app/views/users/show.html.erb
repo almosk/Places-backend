@@ -28,6 +28,14 @@ _______________
 
 _______________
 
+<h3>Posts created:</h3>
+<% @user.posts.each do |post| %>
+  <%= render post, post: post  %>
+  <br>
+<% end %>
+
+_______________
+
 <h3>Collections:</h3>
 <% @user.collections.each do |collection| %>
   <%= render collection, collection: collection  %>

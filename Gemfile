@@ -47,6 +47,7 @@ group :development do
   gem 'devise'
   gem 'devise_token_auth'
   gem 'carrierwave', '~> 2.0'
+  gem 'translit'
 end
 
 group :test do
