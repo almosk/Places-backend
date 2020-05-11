@@ -15,7 +15,7 @@ Rake::Task['db:migrate'].invoke
 
 @users =
   [
-    {title: 'Катя Обухова',  description: 'Дизайнерка из Москвы',                     image: 'lib/assets/users/Катя Обухова.jpg',  email: 'obuhova@mail.com'   },
+    {title: 'Катя Обухова',  description: 'Копирайтер, живу в 🇷🇺 Москве',                     image: 'lib/assets/users/Катя Обухова.jpg',  email: 'obuhova@mail.com'   },
     {title: 'Женя Симонова', description: 'Travel, food, art',                        image: 'lib/assets/users/Женя Симонова.jpg', email: 'simonova@mail.com'  },
     {title: 'Кирилл Осипов', description: 'Собираю лучшие места, в которые хожу сам', image: 'lib/assets/users/Кирилл Осипов.jpg', email: 'osipov@mail.com'    },
     {title: 'Глеб Куценок',  description: 'Фотограф, исследую города',                image: 'lib/assets/users/Глеб Куценок.jpg',  email: 'cutsenok@mail.com'  },
