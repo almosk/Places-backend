@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
+  devise_for :users
+  root to: "posts#index"
   resources :collection_posts
   resources :places
+  resources :collections
+  resources :users
+  resources :cities
   resources :posts do
     member do
       get :save_to_collection
@@ -8,8 +13,20 @@ Rails.application.routes.draw do
       put :delete_from_collection
     end
   end
-  resources :collections
-  resources :users
-  resources :cities
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  namespace :v1 do
+    get 'posts/profile_posts'
+    get 'posts/explore_posts'
+    resources :posts do
+      member do
+        get :save_collections
+      end
+    end
+
+    get 'collections/profile_collections'
+    get 'collections/explore_collections'
+    resources :collections
+
+    resources :users
+  end
 end

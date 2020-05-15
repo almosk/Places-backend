@@ -17,6 +17,11 @@
   </div>
 
   <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div class="field">
     <%= form.label :place_id %>
     <%#= form.number_field :place_id %>
     <%= select("post", "place_id", Place.all.collect { |a| [a.title, a.id] }, { include_blank: true }) %>
@@ -25,7 +30,7 @@
   <div class="field">
     <%= form.label :user_id %>
     <%#= form.number_field :user_id %>
-    <%= select("post", "user_id", User.all.collect { |a| [a.name, a.id] }, { include_blank: true }) %>
+    <%= select("post", "user_id", User.all.collect { |a| [a.title, a.id] }, { include_blank: true }) %>
   </div>
 
   <div class="field">

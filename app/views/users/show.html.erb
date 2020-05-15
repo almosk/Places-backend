@@ -1,8 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <h1>
-  <%= @user.name %>
+  <%= @user.title %>
 </h1>
+
+<%= image_tag(@user.avatar.to_s) %>
+<br>
 
 _______________
 
@@ -21,6 +24,14 @@ _______________
     <%= render post, post: post, collection: collection  %>
     <br>
   <% end %>
+<% end %>
+
+_______________
+
+<h3>Posts created:</h3>
+<% @user.posts.each do |post| %>
+  <%= render post, post: post  %>
+  <br>
 <% end %>
 
 _______________

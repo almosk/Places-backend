@@ -20,7 +20,7 @@
         <td><%= link_to post.title, post %></td>
         <td><%= post.id %></td>
         <td><%= link_to Place.find(post.place_id).title, place_path(post.place_id) %></td>
-        <td><%= link_to User.find(post.user_id).name, user_path(post.user_id) %></td>
+        <td><%= link_to User.find(post.user_id).title, user_path(post.user_id) %></td>
         <td><%= Collection.find(post.collections.ids).collect(&:title) %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
