@@ -31,16 +31,16 @@ Rake::Task['db:migrate'].invoke
 
 @collections =
   [
-    {title: '10 лучших кофеен Москвы', city: 1, image: 'lib/assets/collections/10кофеенмосквы.png',   identificator: 1 },
-    {title: 'Гастропабы',              city: 1, image: 'lib/assets/collections/гастронобар.jpg',      identificator: 2 },
-    {title: 'Дома музеи',              city: 1, image: 'lib/assets/collections/домамузеи.jpg',        identificator: 3 },
-    {title: 'Китай город',             city: 1, image: 'lib/assets/collections/китайгород.jpeg',      identificator: 4 },
-    {title: 'Веганские места',         city: 1, image: 'lib/assets/collections/веганместа.jpg',       identificator: 5 },
-    {title: 'Любимые патрики',         city: 1, image: 'lib/assets/collections/патрики.jpeg',         identificator: 6 },
-    {title: 'Конструктивизм в Москве', city: 1, image: 'lib/assets/collections/конструктивизм.jpg',   identificator: 7 },
-    {title: 'Мой любимый маршрут',     city: 1, image: 'lib/assets/collections/любимыймаршрут.jpg',   identificator: 8 },
-    {title: 'Крафотовое пиво',         city: 1, image: 'lib/assets/collections/пиво.jpeg',            identificator: 9 },
-    {title: 'Еврейская москва',        city: 1, image: 'lib/assets/collections/еврейскаямосква.jpg',  identificator: 10},
+    {title: '10 лучших кофеен Москвы', city: 1, image: 'lib/assets/collections/10кофеенмосквы.png',   identificator: 1,   description: 'Кофе бывает либо хорошим, либо плохим – третьего не дано. Поэтому не хочется лишний раз разочаровываться и переплачивать за быстрорастворимый напиток, который предлагают в ближайших забегаловках.' },
+    {title: 'Гастропабы',              city: 1, image: 'lib/assets/collections/гастронобар.jpg',      identificator: 2,   description: 'Идея создания такого заведения пришла в голову англичанину — владельцу паба в 90-х годах.. В Великобритании принято вечерами после рабочего дня зайти пообщаться в заведение, пропустить рюмочку-другую за беседой.' },
+    {title: 'Дома музеи',              city: 1, image: 'lib/assets/collections/домамузеи.jpg',        identificator: 3,   description: 'В Москве есть несколько мест, где время остановилось — квартиры-музеи писателей, художников, политиков и деятелей сцены хранят не только память о своих знаменитых хозяевах, но и интерьеры разных десятилетий ХХ века.' },
+    {title: 'Китай город',             city: 1, image: 'lib/assets/collections/китайгород.jpeg',      identificator: 4,   description: 'Китай-город – очаровательный район с извилистыми улицами и величественными неоклассическими зданиями.' },
+    {title: 'Веганские места',         city: 1, image: 'lib/assets/collections/веганместа.jpg',       identificator: 5,   description: 'Когда-то в вегетарианской Москве был один «Джаганнат», сейчас всё изменилось и в городе начинают появляться вегетарианские кафе не только без эзотерического уклона, но и с гастрономическим.' },
+    {title: 'Любимые патрики',         city: 1, image: 'lib/assets/collections/патрики.jpeg',         identificator: 6,   description: 'Когда-нибудь, я туда перееду. А пока — любимые места' },
+    {title: 'Конструктивизм в Москве', city: 1, image: 'lib/assets/collections/конструктивизм.jpg',   identificator: 7,   description: 'После сноса Таганской АТС и квартала на Погодинской в столице вновь разгорелись споры по поводу конструктивистского наследия, его недооцененности властью и горожанами.' },
+    {title: 'Мой любимый маршрут',     city: 1, image: 'lib/assets/collections/любимыймаршрут.jpg',   identificator: 8,   description: '15 километров по летней Москве — что может быть лучше...' },
+    {title: 'Крафотовое пиво',         city: 1, image: 'lib/assets/collections/пиво.jpeg',            identificator: 9,   description: 'Выпить чего-нибудь вкусненького и пообщаться с друзьями' },
+    {title: 'Еврейская москва',        city: 1, image: 'lib/assets/collections/еврейскаямосква.jpg',  identificator: 10,  description: 'Собираю места в Москве, саязанные с еврейской культурой'},
   ]
 
 @places =
@@ -234,7 +234,8 @@ def create_collection(collection)
     title:   collection[:title],
     city_id: collection[:city],
     user_id: random_user_id,
-    cover: File.open(collection[:image])
+    cover: File.open(collection[:image]),
+    description: collection[:description],
   )
 end
 
@@ -273,5 +274,5 @@ end
 
   puts "Post #{p.title}, id: #{p.id}"
   puts "     in #{p.collections.collect{|c| c.title}.join(', ')}"
-  puts "     in #{@collection.title} by #{p.user.title}"
+  puts "     in #{@collection.title} by #{@collection.user.title}"
 end

@@ -16,6 +16,7 @@ class Collection < ApplicationRecord
       cover: 'http://localhost:3000' + cover.to_s,
       user_id: user_id,
       user_title: user.title,
+      description: description,
 
       posts: posts.collect { |p| p.post_snippet_json}
     }
