@@ -46,7 +46,7 @@ group :development do
   gem 'rails-erd'
   gem 'devise'
   gem 'devise_token_auth'
-  gem 'carrierwave', '~> 2.0'
+  gem 'carrierwave', '~> 2.1'
   gem 'translit'
 end
 
